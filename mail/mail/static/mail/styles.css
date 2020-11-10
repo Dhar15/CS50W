@@ -1,0 +1,46 @@
+textarea {
+    min-height: 400px;
+}
+
+.no-mail {
+    font-size: 30px; 
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.mail-item .row {
+    border: 1px solid black;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+
+.mail-item:hover {
+    color: #0275d8;
+    outline: 1px solid paleturquoise;
+}
+
+.mail-item .col, .col-6 {
+    padding: 0;
+}
+
+.mail-item .sender {
+    font-weight: bold;
+}
+
+.mail-item .timestamp {
+    color: #888;
+    text-align: right;
+}
+
+#email-view p {
+    margin: 2px;
+}
+
+#email-view button, #compose-form .btn {
+    margin-top: 10px;
+}
+
+#archive-button { 
+    display: inline;
+}
+
