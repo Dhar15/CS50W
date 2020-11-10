@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Image Search</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+        	a {
+        		padding: 10px;
+        		float: right;
+        		font-size: 20px;
+        		text-decoration: underline;
+        	}
+
+        	input[type="submit"] {
+        		background-color: lightgrey;
+        		padding: 10px;
+        	}
+
+        	form {
+        		text-align: center;
+        	}
+
+        	.center {
+        		position: absolute;
+        		top: 50vh;
+        		left: 70vh;
+        		margin: auto;
+        	}
+
+        	.fa-search {
+        		position: absolute;
+        		padding: 7px;
+        	}
+
+        	#searchbox {
+        		width: 400px;
+        		height: 25px;
+        		border-radius: 15px;
+        		outline: none;
+        		padding-left: 30px;
+        	}
+
+        	#submit {
+        		padding-top: 15px;
+        		text-align: center;
+        	}
+        </style>
+    </head>
+    <body>
+    	<a href="index.html"> <- Google Search</a>
+    	<div class="center">
+	        <form action="https://google.com/search" id="form">
+	        	<div id="search">
+		        	<i class="fa fa-search"> </i>
+		            <input type="text" name="q" id="searchbox">  
+	        	</div>
+	        	<input name="tbm" value="isch" hidden>
+	            <div id="submit">
+	            	<input type="submit" value="Google Image Search">
+	        	</div>
+	        </form>
+	    </div>
+    </body>
+</html>

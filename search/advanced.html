@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Advanced Search</title>
+    </head>
+    <style type="text/css">
+    	body {
+    		margin-left: 10px;
+    		padding: 10px;
+    	}
+
+    	a {
+        		padding: 10px;
+        		float: right;
+        		font-size: 20px;
+        		text-decoration: underline;
+        	}
+
+    	h3 {
+    		color: red;
+    		font-size: 18x;
+    	}
+    	hr {
+    		color: grey;
+    	}
+
+    	div {
+    		padding: 10px;
+    	}
+
+    	label {
+    		position: absolute;
+    	}
+
+    	input[type="text"] {
+    		position: relative;
+    		left: 200px;
+    		width: 400px;
+    	}
+
+    	input[type="submit"] {
+    		background-color: lightgrey;
+    		padding: 10px;
+    		margin: 15px;
+        }
+
+    </style>
+    <body>
+    	<a href="index.html"> <- Google Search</a>
+    	<h3> Advanced Search </h3>
+    	<hr>
+        <form action="https://www.google.com/search">
+            <h4> Find pages with .. </h4>
+            <!-- as_q=necessary&as_epq=exact&as_oq=any&as_eq=none -->
+            <div> <label> all these words: </label> <input type = "text" name="as_q"> </div>
+            <div> <label> this exact word or phrase: </label> <input type = "text" name="as_epq"> </div>
+            <div> <label> any of these words: </label> <input type = "text" name="as_oq"> </div>
+            <div> <label> none of these words: </label> <input type = "text" name="as_eq"> </div>
+            <input type="submit" value="Google Advanced Search">
+        </form>
+    </body>
+</html>
