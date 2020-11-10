@@ -1,0 +1,113 @@
+{% extends "auctions/layout.html" %}
+
+{% block script %}
+function added() {
+    alert("Item succesfully added to wishlist")
+}
+function removed() {
+    alert("Item removed from wishlist")
+}
+{% endblock %}
+
+{% block body %}
+
+    {% if not list.active %}
+        <h2 class="text-danger"> CLOSED - This listing is no longer active </h2>
+    {% endif %}
+    <h2> Listing: {{ list.title }}</h2> <br/>
+
+    {% if list.url %}
+        <img src = "{{ list.url }}" width="600"> 
+    {% endif %}
+
+    <h3> {{ list.description }}</h3> <br/>
+
+    <h4> Current Bid: ${{list.starting_bid}}.00</h4> </br>
+
+    {% if user.username %}
+    <p>
+      {% if added %}
+        <a href="{% url 'removefromwatchlist' list.id %}"><button class="btn btn-danger" onclick="removed()">Remove from watchlist</button></a>
+      {% else %}
+        <a href="{% url 'addtowatchlist' list.id %}"><button class="btn btn-success" onclick="added()">Add to watchlist</button></a>
+      {% endif %}
+    </p>
+    <br>
+    {% endif %}
+
+    {% if error %}
+    <div class="alert alert-danger" role="alert">
+        {{error}}
+    </div>
+    {% elif errorgreen %}
+    <div class="alert alert-success" role="alert">
+        {{errorgreen}}
+    </div>
+    {% endif %}
+
+    {% if list.active %}
+        {% if user.is_authenticated %}
+            <div>
+                <form method="POST" action="{% url 'add_bid' list.id %}">
+                    {% csrf_token %}
+                    {{ bid }}
+                    <div style="margin-top: 15px;"> <input type="submit" value="Place Bid" style="background-color:cornflowerblue;"> </div>
+                </form>
+            </div>
+        {% else %}
+            <p> Login to place a bid.</p>
+        {% endif %}
+    {% else %}
+        <h3 class="text-danger">This auction has been closed.</h3>
+        <h4 class="text-success"> Winner: {{ list.winner }} </h4>
+        {% if list.winner|lower == user.username|lower %}
+            <h3 class="text-success"> Congratulations!🏆 You are the winner! 🎉</h3>
+        {% endif %}
+    {% endif %}
+    <br/>
+
+    {% if user.username %}
+        {% if owner and list.active %}
+        <br/>
+        <a href="{% url 'close_bid' list.id %}" <button class="btn btn-warning"> Close Bid </button> </a>
+        <br/> <br/>
+        {% endif %}
+    {% endif %} 
+
+    <h4> Details </h4>
+    <ul>
+        <li> <strong> Listed by: </strong> {{ list.owner }} </li>
+        <li> <strong> Category: </strong> {{ list.category}} </li>
+    </ul>
+
+    {% if user.is_authenticated %}
+    <h3 style="text-decoration: underline;">Reviews</h3> 
+        {% for com in comments %}
+            <div>
+                <h5> {{ com.name }} </h5>
+                <p> {{ com.review }} </p>
+                <h6> {{ com.created_at }} </h6> 
+                <hr/>
+            </div>
+            {% empty %}
+            <h6 style="font-style: italic;"> No reviews yet </h6>
+        {%endfor %}
+    {% endif %}
+
+    {% if user.is_authenticated %}
+        <h3> Give us a feedback </h3>
+        <div>
+            <form method="POST" action="{% url 'add_comment' list.id %}">
+                {% csrf_token %}
+                {% for item in comment %}
+                    {{ item }} <br/><br/>
+                {% endfor %}
+                <div style="margin-top: 2px;"> <input type="submit" value="Add Comment" style="background-color:coral;"> </div>
+            </form>
+        </div>
+    {% else %}
+        <p> Login to add a review.</p>
+    {% endif %}
+    <br/>
+
+{% endblock %}

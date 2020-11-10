@@ -1,0 +1,25 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Active Listings</h2> </br>
+
+    <ul id="list" style="list-style-type:none;">
+        {% for list in listings %}
+        <li>
+            {% if list.url %}
+                <img src="{{ list.url }}" alt="List" width="160"/> 
+            {% else %}
+                <img src="https://www.metrorollerdoors.com.au/wp-content/uploads/2018/02/unavailable-image.jpg" alt="List" width="160">
+            {% endif %}
+            <div class="content">
+                <h4> <a href="{% url 'list' list.id %}"> {{ list.title }} </a> </h4>
+                <h2> {{ list.description }} </h2>
+                <p style="background-color: yellow; width: 40px;"> ${{ list.starting_bid }} </p>
+                <h6> Created at {{ list.created_at}} </h6>
+            </div>
+            <hr/>
+        </li>
+        {% endfor %}
+    </ul>
+    
+{% endblock %}

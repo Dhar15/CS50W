@@ -1,0 +1,28 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<h2> WatchList </h2>
+<br/>   
+
+{% if items %}
+    <ul id="list" style="list-style-type:none;">
+        {% for lists in items %}
+            {% for list in lists %}
+            <li>
+                <img src="{{ list.url }}" alt="List" width="160"/> 
+                <div class="content">
+                    <h4> <a href="{% url 'list' list.id %}"> {{ list.title }} </a> </h4>
+                    <h2> {{ list.description }} </h2>
+                    <p style="background-color: yellow; width: 40px;"> ${{ list.starting_bid }} </p>
+                    <h6> Created at {{ list.created_at}} </h6>
+                </div>
+                <hr/>
+            </li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+{% else %}
+    <h4> No items in wishlist currently. Go ahead and add one! </h4>
+{% endif %}
+
+{% endblock%}
