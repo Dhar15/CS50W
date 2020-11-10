@@ -20,7 +20,7 @@ python manage.py makemigrations
 ``` 
 python manage.py migrate
 ```
-2. To access the project from Django admin interface, we need to create a superuser. Do this by typing the following - (After this, proceed to add your username, email and password. Then you can visit 127.0.0.1:8000/admin and login.) 
+2. To access the project from Django admin interface, we need to create a superuser. Do this by typing the following - (After this, proceed to add your username, email and password. Then you can visit `127.0.0.1:8000/admin` and login.) 
 
 ``` 
 python manage.py createsuperuser
@@ -29,4 +29,4 @@ python manage.py createsuperuser
 ```
 python manage.py runserver 
 ```
-4. In the browser, visit 127.0.0.1:8000 to view the project.
+4. In the browser, visit `127.0.0.1:8000` to view the project.
