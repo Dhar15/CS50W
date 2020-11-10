@@ -1,6 +1,6 @@
 # CS50W
 
-### A repo for CS50's Web Programming with Python and JavaScript.
+### A repo for CS50's Web Programming with Python and JavaScript course.
 
 ## Projects
 
