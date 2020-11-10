@@ -24,9 +24,9 @@ python manage.py migrate
 ``` 
 python manage.py createsuperuser
 ```
-(Proceed to add your username, email and password. Then you can visit 127.0.0.1:8000/admin and login.)
+(Proceed to add your username, email and password. Then you can visit 127.0.0.1:8000/admin and login.) <br/>
 3. Finally, we can run the project on our server. Type-
 ```
 python manage.py runserver 
 ```
-4. In the browser visit 127.0.0.1:8000 to view the project.
+4. In the browser, visit 127.0.0.1:8000 to view the project.
