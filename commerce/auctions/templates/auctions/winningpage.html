@@ -1,0 +1,17 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2> {{ title }} </h2>
+    <div>
+        <h3>This listing is no longer active now.</h3>
+        {% if cb.winner == user.username %}
+            <h4> Congratulations 🎉 </h4>  
+            <h6> You have won the bid!! 🏆 </h6>
+        {% endif %}
+        <ul>
+            <li> <strong> Owner: </strong> {{ cb.owner }} </li>
+            <li> <strong> Winner: </strong> {{ cb.winner }} </li>
+            <li> <strong> Winning Price: </strong> {{ cb.win_bid }} </li>
+        </ul>
+    </div> 
+{% endblock %}
