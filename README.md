@@ -11,7 +11,7 @@
 | 2  | [Commerce](commerce)   | eBay like e-commerce auction site                 | [Link](https://youtu.be/xJp-cvoas7g)
 | 3  | [Mail](mail)           | Frontend for an email client                      | [Link](https://youtu.be/K_ngUP_ueQY)
 
-## Note 
+## Note - Running the Project
 
 1. To run any project, `cd` into the directory of the project. Before running it, we will apply the migrations. In the terminal type - 
 ```
