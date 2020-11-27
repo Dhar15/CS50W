@@ -1,6 +1,6 @@
 # CS50W
 
-### A repo for CS50's Web Programming with Python and JavaScript course.
+### A repo for CS50's (Web Programming with Python and JavaScript)[https://courses.edx.org/courses/course-v1:HarvardX+CS50W+Web/course/] course.
 
 ## Projects
 
