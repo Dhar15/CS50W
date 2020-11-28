@@ -1,0 +1,86 @@
+.body {
+  background-color: snow;
+}
+
+.header img {
+    float: left;
+    background: #555;
+    border-radius: 50%; 
+    width: 200px; 
+    padding: 5px;
+    margin:20px;
+}
+
+.header h1 {
+    position: relative;
+    top: 30px;
+    left: 50px;
+  }
+
+#follow-btn {
+    position: relative;
+    top: 50px;
+    left: 50px;
+    width: 190px;
+    text-align: center;
+}
+
+.btn-dark {
+    position: relative;
+    top: 80px;
+    left: 50px;
+    display: inline-block;
+}
+
+.fa-heart-o {
+    color: red;
+    cursor: pointer;
+  }
+  
+.fa-heart {
+  color: red;
+  cursor: pointer;
+}
+
+.next-btn, .prev-btn {
+  font-size: 20px;
+  display: inline-block;
+  text-decoration: underline;
+  margin-top: 10px;
+  padding: 5px;
+  position: relative;
+  left: calc(50% - 90px);
+}
+
+.btn-success {
+  float: right;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.text-info {
+  float:right;
+  cursor: pointer;
+  margin-top: -60px;
+  font-size: large;
+}
+
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+.text-style {
+  margin-top: 10px; 
+  text-align: center; 
+  font-style: italic; 
+  font-family: monospace ;
+}
+
+i {
+  margin-right: 5px;
+}
+
+
