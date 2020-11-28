@@ -11,7 +11,7 @@
 4) `Following` Users can view all the posts of the people they follow only, by going to the Following page.
 5) `Pagination` Max no.of posts on any page is 10. For more than 10 posts, there is a "Next" option to take to the next page, and similarly a "Previous" button to come back to previous page.
 6) `Edit Page` A user can also edit any of his own posts in case he wishes to.
-7) `Like/Unlike` Users can like or unlike the posts of other users.
+7) `Like/Unlike` Users can like or unlike the posts of other users. ⚠️
 
 #### *SCREENCAST-*
 Find the video demonstration of my project [here](https://youtu.be/lP-WTSJA4to)
