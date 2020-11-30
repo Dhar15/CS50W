@@ -1,0 +1,35 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block script %}
+    <script type="text/javascript" src="{% static 'network/styles.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+
+<div style="margin: 5px;">
+    <h2 style="font-style: italic; padding: 5px;"> Accounts You Follow </h2>   
+    {% for post in page_obj %}
+        <div class="border border-secondary rounded p-3 mt-2"> 
+            <a href="{% url 'profile' post.user.id %}"> <h2> {{ post.user }} </h2> </a>
+            <h5>{{ post.post }} </h5>
+            <h6 style="margin-top: 10px;"> {{ post.timestamp }}</h6>
+
+            <i class="fa fa-heart-o" id="like-btn-{{post.id}}" onclick="like('{{ post.id }}')"></i>
+            <p style="display: inline-block;" id="like-count-{{post.id}}"> {{ post.likes }} </p> 
+        </div>
+
+    {% empty %}
+            <h2 style="padding: 10px;"> No posts yet</h2>
+    {% endfor %}
+</div>
+
+{% if page_obj.has_next %}
+<p class="next-btn"><a href="?page={{ page_obj.next_page_number }}">Next</a></p>
+{% endif %}
+
+{% if page_obj.has_previous %}
+<p class="prev-btn"><a href="?page={{ page_obj.previous_page_number }}">Previous</a></p>
+{% endif %}
+
+{% endblock %}
